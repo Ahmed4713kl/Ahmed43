@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تواصل معي - أحمد كمال</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 30px; background: #fafafa; text-align: center; }
+    input, textarea, button { margin: 5px; padding: 10px; border-radius: 4px; width: 80%; max-width: 400px; }
+    h2 { color: #2c3e50; }
+  </style>
+</head>
+<body>
+  <h2>نموذج التواصل</h2>
+  <form onsubmit="sendMessage(); return false;">
+    <input type="text" placeholder="الاسم" required><br>
+    <input type="email" placeholder="البريد الإلكتروني" required><br>
+    <textarea placeholder="رسالتك" rows="5"></textarea><br>
+    <button type="submit">إرسال</button>
+  </form>
+  <a href="index.html">الرجوع للرئيسية</a>
+  <script>
+    function sendMessage() {
+      alert('تم إرسال الرسالة! شكراً لتواصلك.');
+    }
+  </script>
+</body>
+</html>

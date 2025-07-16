@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>برامج حسابية - أحمد كمال</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 30px; background: #f0f0f0; text-align: center; }
+    input, button { padding: 8px; margin: 5px; border-radius: 4px; }
+    h2 { color: #2c3e50; }
+  </style>
+</head>
+<body>
+  <h2>برامج حسابية</h2>
+  <input type="number" id="r" placeholder="نصف القطر">
+  <input type="number" id="h" placeholder="الارتفاع">
+  <button onclick="calcCylinder()">حجم الأسطوانة</button><br>
+  <button onclick="calcCircle()">مساحة الدائرة</button><br>
+  <input type="number" id="a" placeholder="a">
+  <input type="number" id="b" placeholder="b">
+  <input type="number" id="c" placeholder="c">
+  <button onclick="solveQuadratic()">حل المعادلة</button>
+  <p id="result"></p>
+  <a href="index.html">الرجوع للرئيسية</a>
+  <script>
+    function calcCylinder() {
+      let r = document.getElementById('r').value;
+      let h = document.getElementById('h').value;
+      let volume = Math.PI * r * r * h;
+      document.getElementById('result').innerText = 'حجم الأسطوانة: ' + volume.toFixed(2);
+    }
+    function calcCircle() {
+      let r = document.getElementById('r').value;
+      let area = Math.PI * r * r;
+      document.getElementById('result').innerText = 'مساحة الدائرة: ' + area.toFixed(2);
+    }
+    function solveQuadratic() {
+      let a = document.getElementById('a').value;
+      let b = document.getElementById('b').value;
+      let c = document.getElementById('c').value;
+      let delta = b * b - 4 * a * c;
+      if (delta < 0) {
+        document.getElementById('result').innerText = 'لا يوجد حل حقيقي';
+      } else {
+        let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+        let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+        document.getElementById('result').innerText = 'x1 = ' + x1.toFixed(2) + ', x2 = ' + x2.toFixed(2);
+      }
+    }
+  </script>
+</body>
+</html>
